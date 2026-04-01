@@ -80,7 +80,7 @@ public:
     }
 
     void out() const {
-        for (int i = 0; i < len; ++i) putchar(ch[i]);
+        if (len > 0) cout.write(ch, len);
     }
 
     int get_len() const { return len; }
@@ -95,7 +95,7 @@ int main() {
     if (!(cin >> id)) return 0;
     if (id == 1) {
         mystring str1(100, 'a');
-        str1.out(); puts("");
+        str1.out(); cout << endl;
     } else if (id == 2) {
         cin >> str_in1;
         mystring str2 = str_in1;
@@ -114,7 +114,7 @@ int main() {
         mystring str2 = str_in1;
         mystring str3 = str_in2;
         str2.ADD(str3);
-        str2.out(); puts("");
+        str2.out(); cout << endl;
     } else {
         cin >> str_in1 >> str_in2;
         mystring str2 = str_in1;
@@ -127,7 +127,7 @@ int main() {
         cout << str2.get_len() << " " << str3.get_len() << '\n';
         cout << (int)(str2 < str3) << '\n';
         str2.ADD(str3);
-        str2.out(); puts("");
+        str2.out(); cout << endl;
         cout << str2.get_len() << '\n';
     }
     return 0;
